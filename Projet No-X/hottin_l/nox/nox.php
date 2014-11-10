@@ -6,12 +6,12 @@
 // Login   <hottin_l@etna-alternance.net>
 //
 // Started on  Thu Nov  6 09:17:07 2014 HOTTIN Lucie
-// Last update Mon Nov 10 18:07:52 2014 HOTTIN Lucie
+// Last update Mon Nov 10 18:26:23 2014 HOTTIN Lucie
 //
 
-require_once "./include/error_management.php";
-require_once "./include/message_sortie.php";
-require_once "./include/functions_needed.php";
+require_once "error_management.php";
+require_once "message_sortie.php";
+require_once "functions_needed.php";
 
 system("clear");
 $j = 1;
