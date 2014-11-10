@@ -1,29 +1,26 @@
 #!/usr/bin/env php
 <?php
 // nox.php for NO_X in /home/hottin_l/Projets/NO_X/hottin_l/nox
-// 
+//
 // Made by HOTTIN Lucie
 // Login   <hottin_l@etna-alternance.net>
-// 
+//
 // Started on  Thu Nov  6 09:17:07 2014 HOTTIN Lucie
+// Last update Mon Nov 10 18:07:52 2014 HOTTIN Lucie
 //
 
 require_once "./include/error_management.php";
-
-// PENSER A SUPPRIMER TOUS LES COMMENTAIRES DANS TOUS LES FICHIERS !!!!!!
+require_once "./include/message_sortie.php";
+require_once "./include/functions_needed.php";
 
 system("clear");
 $j = 1;
 $deb = microtime(TRUE);
-$recherche = 1;
-if ($argc< 3)
+if ($argc < 3)
   echo "Vous devez saisir au moins 3 arguments : un fichier exécutable en premier, un dico et un message\n";
 else
   {
-    //echo "test1\n";	
-    //  $file = fopen($param, "r");
-    //readfile($param);
-    //fclose($file);
+    echo "\033[01;32m\nBienvenue Agent N˚X\n\n\033[00m";
     while ($j < $argc)
       {
 	$param = $argv[$j];
@@ -31,34 +28,14 @@ else
 	  $j++;
 	elseif (error_management($param) == TRUE)
 	  {
-	    echo "\033[01;32m\nBienvenue Agent N˚X\n\n\033[00m";	
-	    $content = file_get_contents($param);
-	    echo "\033[04mRecherche n˚$recherche :\033[00m\n\n";
-	    $message = explode(" ", trim($content));
-	    $content2 = file_get_contents("dico.txt");
-	    $dico = explode(" ", trim($content2));
-	    $i = 0;
-	    while (isset($message[$i]))
-	      {
-		$k = 0;		
-		while (isset($dico[$k]))
-		  {
-		    if ($message[$i] != $dico[$k])
-		      $k++;
-		    else
-		      {
-			echo "$message[$i]\n";
-			break;
-		      }
-		  }		    
-		$i++;
-	      }
+	    content_param($param);
+	    echo "\n\033[36;04mComprendre dans ce message :\033[00m ", message_sortie($param);
 	    $j++;
-	    $recherche++;
 	  }
       }
     $fin = microtime(TRUE);
     $time = $fin - $deb;
     $form = number_format($time, 5);
     echo "\nRecherche terminée en " . $form . " sec.\n\n";
+    message_test($argc);
   }
