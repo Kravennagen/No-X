@@ -6,7 +6,6 @@
 // Login   <hottin_l@etna-alternance.net>
 // 
 // Started on  Thu Nov  6 09:17:07 2014 HOTTIN Lucie
-// Last update Fri Nov  7 13:53:06 2014 HOTTIN Lucie
 //
 
 require_once "./include/error_management.php";
@@ -21,6 +20,10 @@ if ($argc< 3)
   echo "Vous devez saisir au moins 3 arguments : un fichier exécutable en premier, un dico et un message\n";
 else
   {
+    //echo "test1\n";	
+    //  $file = fopen($param, "r");
+    //readfile($param);
+    //fclose($file);
     while ($j < $argc)
       {
 	$param = $argv[$j];
@@ -32,7 +35,7 @@ else
 	    $content = file_get_contents($param);
 	    echo "\033[04mRecherche n˚$recherche :\033[00m\n\n";
 	    $message = explode(" ", trim($content));
-	    $content2 = file_get_contents("dico");
+	    $content2 = file_get_contents("dico.txt");
 	    $dico = explode(" ", trim($content2));
 	    $i = 0;
 	    while (isset($message[$i]))

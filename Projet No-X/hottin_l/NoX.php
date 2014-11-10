@@ -6,16 +6,20 @@
 // Login   <flaman_m@etna-alternance.net>
 // 
 // Started on  Thu Nov  6 09:48:17 2014 FLAMANT Morgane
-// Last update Thu Nov  6 11:28:37 2014 FLAMANT Morgane
+// Last update Thu Nov  6 18:00:36 2014 FLAMANT Morgane
 //
 
 $timestart=microtime(true);
 //reste du code
-$mots_wesh = array('', '',);
-for($i=0; $i<count($mots_wesh - 1); $i++)
-  {
+$mots_wesh= array('crayon', 'stylo', 'feutre', 'taille-crayon', 'pointe', 'wesh', 'mine', 'gomme', 'dessin', 'coloriage', '\
+rayure', 'peinture', 'pinceau', 'couleur', 'craie', 'papier', 'feuille', 'cahier', 'carnet');
+$wesh = array("wesh");
+array_diff_ukey(array $wesh, array $mots_wesh [,array $wesh], callable $key_compare_func)
+var_dump(array_diff_ukey($mots_wesh, $wesh, 'key_compare_func'));
+//for($i=0; $i<count($mots_wesh - 1); $i++)
+// {
     //mots en wesh trouve
-  }
+// }
 
 
 //fin du code ici :
